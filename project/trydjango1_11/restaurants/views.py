@@ -9,5 +9,25 @@ from django.shortcuts import render
 
 def home(request):
 
-    return HttpResponse("Home Page")
+# up to chapter 5: For your Reference
+    # return HttpResponse("Home Page")
+# up to chapter 5: For your Reference
+
+
+# up to chapter 5: Rendering HTML
+    html_ = """
+        <!DOCTYPE html>
+        <html lang=en>
+        <head>
+        </head>
+        <body>
+            <h1>This is the homepage HTML</h1>
+            <p>The is the content for the homepage</p>
+        </body>
+        </html>
+    """
+
+    return HttpResponse(html_)
+
+
     # return render(request, "home.html", {"Title":"Homepage"})
