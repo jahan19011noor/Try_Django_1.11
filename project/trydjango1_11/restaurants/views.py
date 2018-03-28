@@ -15,19 +15,23 @@ def home(request):
 
 
 # up to chapter 5: Rendering HTML
-    html_ = """
-        <!DOCTYPE html>
-        <html lang=en>
-        <head>
-        </head>
-        <body>
-            <h1>This is the homepage HTML</h1>
-            <p>The is the content for the homepage</p>
-        </body>
-        </html>
-    """
+    # html_ = """
+    #     <!DOCTYPE html>
+    #     <html lang=en>
+    #     <head>
+    #     </head>
+    #     <body>
+    #         <h1>This is the homepage HTML</h1>
+    #         <p>The is the content for the homepage</p>
+    #     </body>
+    #     </html>
+    # """
+    #
+    # return HttpResponse(html_)
+# up to chapter 5: Rendering HTML
 
-    return HttpResponse(html_)
+# up to chapter 6: Render a Django Template
 
+    return render(request, "base.html", {"title":"Homepage"})
 
-    # return render(request, "home.html", {"Title":"Homepage"})
+# up to chapter 6: Render a Django Template
