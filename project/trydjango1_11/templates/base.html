@@ -6,5 +6,25 @@
 <body>
      <h1>This is the homepage HTML</h1>
      <p>The is the content for the homepage</p>
+
+    {% if show_the_random_number %}
+     <p>the bool_item is {{num}}</p>
+    {% endif %}
+
+    {% if num|divisibleby:"2" %}
+     <h3>the random number {{num}} id divisible by 2</h3>
+    {% endif %}
+
+    {% for value in values %}
+     <h4>{{value}}</h4>
+    {% endfor %}
+
+    {% verbatim %}
+    <h1>This is the raw htm code containing</h1>
+     <p>{{num}}</p>
+     <p>{{values}}</p>
+     <p>{{title}}</p>
+     <p>{{show_the_random_number}}</p>
+    {% endverbatim %}
 </body>
 </html>

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import random
 
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -32,6 +33,9 @@ def home(request):
 
 # up to chapter 6: Render a Django Template
 
-    return render(request, "base.html", {"title":"Homepage"})
+    num = random.randint(0, 10000000)
+    list_of_values = ["one", "two", "three"]
+
+    return render(request, "base.html", {"title":"Homepage", "show_the_random_number": True, "num": num, "values": list_of_values})
 
 # up to chapter 6: Render a Django Template
