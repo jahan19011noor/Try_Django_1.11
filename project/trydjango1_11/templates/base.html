@@ -2,19 +2,15 @@
 <html lang=en>
 <head>
     <title>{{title}}</title>
+    {% include 'snippets/css.html' %}
 </head>
 <body>
-    <h1>{% block header %}Welcome{% endblock %}</h1>
-    <a href="/">Home</a>
-    <a href="/contact/">Contact</a>
-    <a href="/about/">About</a>
-    {% block contentbase %}
-        <h1>Base content not replaced</h1>
-    {% endblock contentbase %}
+    {% include 'snippets/nav.html' %}
     <div class="container">
     {% block content %}
         <h1>base content removed</h1>
     {% endblock content %}
     </div>
+    {% include 'snippets/js.html' %}
 </body>
 </html>
