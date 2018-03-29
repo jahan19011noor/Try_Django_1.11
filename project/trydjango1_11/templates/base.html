@@ -4,27 +4,17 @@
     <title>{{title}}</title>
 </head>
 <body>
-     <h1>This is the homepage HTML</h1>
-     <p>The is the content for the homepage</p>
-
-    {% if show_the_random_number %}
-     <p>the bool_item is {{num}}</p>
-    {% endif %}
-
-    {% if num|divisibleby:"2" %}
-     <h3>the random number {{num}} id divisible by 2</h3>
-    {% endif %}
-
-    {% for value in values %}
-     <h4>{{value}}</h4>
-    {% endfor %}
-
-    {% verbatim %}
-    <h1>This is the raw htm code containing</h1>
-     <p>{{num}}</p>
-     <p>{{values}}</p>
-     <p>{{title}}</p>
-     <p>{{show_the_random_number}}</p>
-    {% endverbatim %}
+    <h1>{% block header %}Welcome{% endblock %}</h1>
+    <a href="/">Home</a>
+    <a href="/contact/">Contact</a>
+    <a href="/about/">About</a>
+    {% block contentbase %}
+        <h1>Base content not replaced</h1>
+    {% endblock contentbase %}
+    <div class="container">
+    {% block content %}
+        <h1>base content removed</h1>
+    {% endblock content %}
+    </div>
 </body>
 </html>
