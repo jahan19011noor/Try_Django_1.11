@@ -15,11 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from restaurants.views import home, contact, about
+from restaurants.views import home, contact, about, ContactView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home),
-    url(r'^contact/$', contact),
+
+# up to chapter 10: Include Template Tag
+    # url(r'^contact/$', contact),
+# # up to chapter 10: Include Template Tag
+
+# up to chapter 12: Class Based Views
+    # url(r'^contact/(?P<id>\d+)/$', ContactView.as_view()),    url having regurlar expression
+    url(r'^contact/$', ContactView.as_view()),
+# up to chapter 12: Class Based Views
+
     url(r'^about/$', about),
 ]
+# .as_view() creates an instance fo the class ContactView so that the class can be used
