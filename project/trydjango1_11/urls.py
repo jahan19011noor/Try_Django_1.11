@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from restaurants.views import home, contact, about, ContactView
+
+# from restaurants.views import home, contact, about
+from restaurants.views import ContactView, \
+    ContactTemplateView, HomeTemplateView, AboutTemplateView
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home),
+    # url(r'^$', home),
 
 # up to chapter 10: Include Template Tag
     # url(r'^contact/$', contact),
@@ -27,9 +31,23 @@ urlpatterns = [
 
 # up to chapter 12: Class Based Views
     # url(r'^contact/(?P<id>\d+)/$', ContactView.as_view()),    url having regurlar expression
-    url(r'^contact/$', ContactView.as_view()),
+    # url(r'^contact/$', ContactView.as_view()),
+    # url(r'^about/$', about),
 # up to chapter 12: Class Based Views
 
-    url(r'^about/$', about),
+# up to chapter 13: Template View
+    url(r'^$', HomeTemplateView.as_view()),
+
+    # these url are not needed unless we customize any function of the TemplateView class
+    # url(r'^about/$', AboutTemplateView.as_view()),
+    # url(r'^contact/$', ContactTemplateView.as_view()),
+    # these url are not needed unless we customize any function of the TemplateView class
+
+    # so we can replace them with
+    url(r'^about/$', TemplateView.as_view(template_name='about.html')),
+    url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
+    # so we can replace them with
+
+# up to chapter 13: Template View
 ]
 # .as_view() creates an instance fo the class ContactView so that the class can be used
