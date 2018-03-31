@@ -26,7 +26,14 @@ from django.contrib import admin
 # up to chapter 15: More on Model Fields
 
 from django.views.generic import TemplateView
-from restaurants.views import restaurang_list_view
+from restaurants.views import (
+    restaurang_list_view,
+    RestaurantListView,
+    SylhetiRestaurantListView,
+    Star3RestaurantListView,
+    Star5RestaurantListView,
+    SearchRestaurantListView
+)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -68,6 +75,11 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html')),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
-    url(r'^restaurants/$', restaurang_list_view)
+    # url(r'^restaurants/$', restaurang_list_view),
+    url(r'^restaurants/(?P<slug>\w+)/$', SearchRestaurantListView.as_view()),
+    url(r'^restaurants/$', RestaurantListView.as_view()),
+    # url(r'^restaurants/sylheti/$', SylhetiRestaurantListView.as_view()),
+    # url(r'^restaurants/5_star/$', Star5RestaurantListView.as_view()),
+    # url(r'^restaurants/3_star/$', Star3RestaurantListView.as_view()),
 ]
 # .as_view() creates an instance fo the class ContactView so that the class can be used

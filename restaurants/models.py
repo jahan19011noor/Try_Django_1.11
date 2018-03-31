@@ -13,4 +13,4 @@ class Restaurant(models.Model):
     # my_date_field   = models.DateTime(auto_now=False, auto_now_add=False)
 
     def __str__(self):
-        return self.name
+        return self.catagory
