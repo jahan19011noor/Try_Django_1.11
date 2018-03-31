@@ -5,32 +5,12 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView
 
-# up to chapter 12: Class Based Views
-class ContactView(View):
-    def get(self, request, *args, **kwargs):
-        print kwargs
-        return render(request, "contact.html", {})
-# up to chapter 12: Class Based Views
+from .models import Restaurant
 
-# up to chapter 13: Template View
-class HomeTemplateView(TemplateView):
-    template_name = 'home.html'
+def restaurang_list_view(request):
 
-    def get_context_data(self, *args, **kwargs):
-        context = super(HomeTemplateView, self).get_context_data(*args, **kwargs)
-        print context
+    querySet = Restaurant.objects.all()
 
-        num = random.randint(0, 10000000)
-        list_of_values = ["one", "two", "three"]
-        context = {
-            "title": "Home 1", "show_the_random_number": True, "num": num, "values": list_of_values
-        }
-
-        return context
-
-class AboutTemplateView(TemplateView):
-    template_name = 'about.html'
-
-class ContactTemplateView(TemplateView):
-    template_name = 'contact.html'
-# up to chapter 13: Template View
+    template_name = 'restaurants/restaurant_list.html'
+    context = {'obj_list': {'title': 'Restaurant List', 'restaurants': querySet}}
+    return render(request, template_name=template_name, context=context)
