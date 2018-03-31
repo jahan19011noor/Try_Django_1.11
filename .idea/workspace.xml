@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28f6a135-7ca5-46df-b2fd-04b59fedb34a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/restaurants/views_up_to_chap_15.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/restaurants/restaurant_list.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/restaurants/models.py" afterPath="$PROJECT_DIR$/restaurants/models.py" />
-      <change beforePath="$PROJECT_DIR$/restaurants/views.py" afterPath="$PROJECT_DIR$/restaurants/views.py" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" afterPath="$PROJECT_DIR$/templates/about.html" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" afterPath="$PROJECT_DIR$/templates/contact.html" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change beforePath="$PROJECT_DIR$/trydjango/urls.py" afterPath="$PROJECT_DIR$/trydjango/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
