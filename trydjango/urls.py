@@ -29,10 +29,11 @@ from django.views.generic import TemplateView
 from restaurants.views import (
     restaurang_list_view,
     RestaurantListView,
-    SylhetiRestaurantListView,
-    Star3RestaurantListView,
-    Star5RestaurantListView,
-    SearchRestaurantListView
+    # SylhetiRestaurantListView,
+    # Star3RestaurantListView,
+    # Star5RestaurantListView,
+    # SearchRestaurantListView,
+    RestaurantDetailView
 )
 
 urlpatterns = [
@@ -70,16 +71,32 @@ urlpatterns = [
     # url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     # url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
 
-# up to chapter 15: More on Model Fields
+# up to chapter 15: More on Model Fields\
+
+# up to chapter 18: Generic List View
+
+    # url(r'^restaurants/sylheti/$', SylhetiRestaurantListView.as_view()),
+    # url(r'^restaurants/5_star/$', Star5RestaurantListView.as_view()),
+    # url(r'^restaurants/3_star/$', Star3RestaurantListView.as_view()),
+
+# up to chapter 18: Generic List View
+
+# up to chapter 19: Restaurant Profile Detail
 
     url(r'^$', TemplateView.as_view(template_name='home.html')),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
     # url(r'^restaurants/$', restaurang_list_view),
-    url(r'^restaurants/(?P<slug>\w+)/$', SearchRestaurantListView.as_view()),
+    # url(r'^restaurants/(?P<slug>\w+)/$', SearchRestaurantListView.as_view()),
     url(r'^restaurants/$', RestaurantListView.as_view()),
-    # url(r'^restaurants/sylheti/$', SylhetiRestaurantListView.as_view()),
-    # url(r'^restaurants/5_star/$', Star5RestaurantListView.as_view()),
-    # url(r'^restaurants/3_star/$', Star3RestaurantListView.as_view()),
+
+# pk or slug is the default for regular expression to query modal detail
+    # to change to something else override the get_object for the DetailView
+    # url(r'^restaurants/(?P<pk>\w+)/$', RestaurantDetailView.as_view()),
+    url(r'^restaurants/(?P<restaurant_id>\w+)/$', RestaurantDetailView.as_view()),
+# pk or slug is the default for regular expression to query modal detail
+    # to change to something else override the get_object for the DetailView
+
+# up to chapter 19: Restaurant Profile Detail
 ]
 # .as_view() creates an instance fo the class ContactView so that the class can be used

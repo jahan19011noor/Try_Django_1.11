@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-    <title>{{obj_list.title}}</title>
+    <title>Restaurants</title>
 {% endblock title %}
 
 {% block head %}
@@ -10,7 +10,7 @@
 {% block content %}
 <h1>Restaurant List</h1>
 <ul>
-    {% for obj in obj_list.restaurants %}
+    {% for obj in object_list %}
     <li>{{ obj }}<br>{{ obj.name }} - {{ obj.location }} - {{ obj.catagory }} - {{ obj.timestamp }} - {{ obj.updated }}</li>
     {% endfor %}
 </ul>
