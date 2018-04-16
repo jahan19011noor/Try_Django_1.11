@@ -40,11 +40,11 @@ class RestaurantDetailView(DetailView):
         return context  # have to return to complete overriding
 
 # overriding get_object for DetailView to query with "restaurant_id"
-    def get_object(self, *args, **kwargs):
-        print(self.kwargs)
-        rest_id = self.kwargs.get('restaurant_id')
-        obj = get_object_or_404(Restaurant, id=rest_id)
-        return obj
+#     def get_object(self, *args, **kwargs):
+#         print(self.kwargs)
+#         rest_id = self.kwargs.get('restaurant_id')
+#         obj = get_object_or_404(Restaurant, id=rest_id)
+#         return obj
 # overriding get_object for DetailView to query with "restaurant_id"
 
     #******* do not have to provide template_name because the default template name for DetailView is modelName_detail.html

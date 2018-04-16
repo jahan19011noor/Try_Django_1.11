@@ -37,7 +37,8 @@ urlpatterns = [
 # pk or slug is the default for regular expression to query modal detail
     # to change to something else override the get_object for the DetailView
     # url(r'^restaurants/(?P<pk>\w+)/$', RestaurantDetailView.as_view()),
-    url(r'^restaurants/(?P<restaurant_id>\w+)/$', RestaurantDetailView.as_view()),
+    # url(r'^restaurants/(?P<restaurant_id>\w+)/$', RestaurantDetailView.as_view()),
+    url(r'^restaurants/(?P<slug>[\w-]+)/$', RestaurantDetailView.as_view()),
 # pk or slug is the default for regular expression to query modal detail
     # to change to something else override the get_object for the DetailView
 
