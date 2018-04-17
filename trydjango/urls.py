@@ -4,7 +4,8 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from restaurants.views import (
     RestaurantListView,
-    RestaurantDetailView
+    RestaurantDetailView,
+    restaurant_detail_view
 )
 
 urlpatterns = [
@@ -18,4 +19,5 @@ urlpatterns = [
     # after chapter 22. Slugs as URL Params
     url(r'^restaurants/(?P<slug>[\w-]+)/$', RestaurantDetailView.as_view()),
     # after chapter 22. Slugs as URL Params
+    url(r'^restaurant_detail/(?P<slug>[\w-]+)/$', restaurant_detail_view),
 ]
