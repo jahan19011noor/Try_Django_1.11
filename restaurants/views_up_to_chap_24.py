@@ -4,7 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView
-from .forms import RestaurantCreateForm
 
 from .models import Restaurant
 
@@ -36,40 +35,42 @@ class RestaurantListView(ListView):
         else:
             queryset = Restaurant.objects.all()
         return queryset
+    # queryset = Restaurant.objects.all()
 
 class RestaurantDetailView(DetailView):
+    # import pdb;pdb.set_trace();
+    # detail view does 404 by default if instance is not found
     queryset = Restaurant.objects.all()
+    # def get_context_data(self, *args, **kwargs):
+    #     # queries field_name = value - where field_name = url_param_name and value = value
+    #     print(self.kwargs)
+    #     context = super(RestaurantDetailView, self).get_context_data(*args, **kwargs)   # getting the super's get_context_data
+    #     print(context)  # print the supers context
+    #     return context  # have to return to complete overriding
 
 
 # ------------------ Creating view to handle forms -------------------#
 #         Chapter 24. Saving Data the Hard + Wrong Way
 
 def restaurant_create_view(request):
-    form = RestaurantCreateForm(request.POST or None)
-    errors = None
+
     if request.method == 'POST':
         print("Post Data")
         print(request.POST)
-        # title = request.POST.get("title")
-        # location = request.POST.get("location")
-        # category = request.POST.get("category")
-        # form = RestaurantCreateForm(request.POST)
-        if form.is_valid():
-            obj = Restaurant.objects.create(
-                name=form.cleaned_data.get('name'),
-                location=form.cleaned_data.get('location'),
-                category=form.cleaned_data.get('category')
-            )
-            return HttpResponseRedirect("/restaurants/")
-        if form.errors:
-            errors = form.errors
-            print (form.errors)
-
+        title = request.POST.get("title")
+        location = request.POST.get("location")
+        category = request.POST.get("category")
+        obj = Restaurant.objects.create(
+            name=title,
+            location=location,
+            category=category
+        )
+        return HttpResponseRedirect("/restaurants/")
     if request.method == 'GET':
         print("Get Data")
         print(request.GET)
     template_name = 'restaurants/form.html'
-    context = {"form": form, "errors": errors}
+    context = {}
     return render(request, template_name, context)
 
 # ------------------ Creating view to handle forms -------------------#
