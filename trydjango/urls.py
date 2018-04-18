@@ -5,7 +5,8 @@ from django.views.generic import TemplateView
 from restaurants.views import (
     RestaurantListView,
     RestaurantDetailView,
-    restaurant_detail_view
+    restaurant_detail_view,
+    restaurant_create_view
 )
 
 urlpatterns = [
@@ -17,7 +18,16 @@ urlpatterns = [
     url(r'^restaurants/$', RestaurantListView.as_view()),
 
     # after chapter 22. Slugs as URL Params
+#     ---------------------- Forms ------------------ #
+#     Chapter 24. Saving Data the Hard + Wrong Way
+
+    url(r'^restaurants/create/$', restaurant_create_view),
+#     this url being before the slug url gets matched first and thus the url match succeeds
+#     if placed below the slug url the url match will fail
+
+#     ---------------------- Forms ------------------ #
     url(r'^restaurants/(?P<slug>[\w-]+)/$', RestaurantDetailView.as_view()),
     # after chapter 22. Slugs as URL Params
     url(r'^restaurant_detail/(?P<slug>[\w-]+)/$', restaurant_detail_view),
+
 ]
