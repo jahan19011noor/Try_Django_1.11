@@ -2,12 +2,13 @@
 from django.db import models
 from django.db.models.signals import pre_save, post_save
 from .utils import unique_slug_generator
+from .validators import validate_caterogy
 
 # Create your models here.
 class Restaurant(models.Model):
     name            = models.CharField(max_length=100)
     location        = models.CharField(max_length=255, null=True, blank=True)
-    category        = models.CharField(max_length=255, null=True, blank=True)
+    category        = models.CharField(max_length=255, null=True, blank=True, validators=[validate_caterogy])
     timestamp       = models.DateTimeField(auto_now_add=True)   # Saves automatically and does not allow to make changes
     updated         = models.DateTimeField(auto_now=True)       # Saves automatically and does not allow to make changes
     slug            = models.SlugField(null=True, blank=True)
@@ -22,6 +23,7 @@ class Restaurant(models.Model):
 
 
 def r_pre_save_receiver(sender, instance, *args, **kwargs):
+    instance.category = instance.category.capitalize()
     print ('saving..')
     print (instance.timestamp)
     if not instance.slug:               #always do pre_save

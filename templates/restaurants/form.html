@@ -10,8 +10,8 @@
 {% block content %}
 <h1>Add Restaurant</h1>
 {#    Receiving validaiton of RestaurantCreateView #}
-    {% if form.erros %}
-        {{ form.errors }}
+    {% if form.erros.non_field_errors %}
+        {{ form.errors.non_field_errors }}
     {% endif %}
 {#    Receiving validaiton of RestaurantCreateView #}
 
