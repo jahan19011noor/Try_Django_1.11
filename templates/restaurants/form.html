@@ -9,9 +9,17 @@
 
 {% block content %}
 <h1>Add Restaurant</h1>
-    {% if erros %}
-        {{ errors }}
+{#    Receiving validaiton of RestaurantCreateView #}
+    {% if form.erros %}
+        {{ form.errors }}
     {% endif %}
+{#    Receiving validaiton of RestaurantCreateView #}
+
+{#    Receiving validaiton of restaurant_create_modal_view and restaurant_create_view #}
+    {#    {% if erros %}#}
+    {#        {{ errors }}#}
+    {#    {% endif %}#}
+{#    Receiving validaiton of restaurant_create_modal_view and restaurant_create_view #}
 <form method="POST"> {% csrf_token %}
 {#    <input type="text" name="title" placeholder="Your Title"><br/><br/>#}
 {#    <input type="text" name="location" placeholder="Your Location"><br/><br/>#}

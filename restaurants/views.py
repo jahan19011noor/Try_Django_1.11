@@ -3,8 +3,8 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView
-from .forms import RestaurantCreateForm
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from .forms import RestaurantCreateForm, RestaurantCreateModelForm
 
 from .models import Restaurant
 
@@ -71,5 +71,27 @@ def restaurant_create_view(request):
     template_name = 'restaurants/form.html'
     context = {"form": form, "errors": errors}
     return render(request, template_name, context)
+#         Chapter 24. Saving Data the Hard + Wrong Way
+
+#         Chapter 25. The Extra Power of Django Model Forms
+
+def restaurant_create_modal_view(request):
+    form = RestaurantCreateModelForm(request.POST or None)
+    errors = None
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/restaurants/")
+    if form.errors:
+        errors = form.errors
+        print (form.errors)
+    template_name = 'restaurants/form.html'
+    context = {"form": form, "errors": errors}
+    return render(request, template_name, context)
+
+class RestaurantCreateView(CreateView):
+    form_class = RestaurantCreateModelForm
+    template_name = 'restaurants/form.html'
+    success_url = '/restaurants/'
+#         Chapter 25. The Extra Power of Django Model Forms
 
 # ------------------ Creating view to handle forms -------------------#
