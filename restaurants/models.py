@@ -1,11 +1,18 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.conf import settings
 from django.db.models.signals import pre_save, post_save
 from .utils import unique_slug_generator
 from .validators import validate_caterogy
 
+User = settings.AUTH_USER_MODEL
+
 # Create your models here.
 class Restaurant(models.Model):
+    owner            = models.ForeignKey(User)
+            #class_instance.model_name_set.all() = restaurants
+            # and     model.owner_id gives id of user
+            # and     model.owner gives user
     name            = models.CharField(max_length=100)
     location        = models.CharField(max_length=255, null=True, blank=True)
     category        = models.CharField(max_length=255, null=True, blank=True, validators=[validate_caterogy])
