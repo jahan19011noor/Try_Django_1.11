@@ -79,8 +79,14 @@ def restaurant_create_modal_view(request):
     form = RestaurantCreateModelForm(request.POST or None)
     errors = None
     if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/restaurants/")
+        if request.user.is_authenticated():
+            restaurant = form.save(commit=False)
+            restaurant.owner = request.user
+            restaurant.save()
+            # form.save()
+            return HttpResponseRedirect("/restaurants/")
+        else:
+            return HttpResponseRedirect("/login/")
     if form.errors:
         errors = form.errors
         print (form.errors)
