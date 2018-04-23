@@ -100,4 +100,11 @@ class RestaurantCreateView(CreateView):
     success_url = '/restaurants/'
 #         Chapter 25. The Extra Power of Django Model Forms
 
+    def form_valid(self, form):
+        restaurant = form.save(commit=False)
+
+        restaurant.owner = self.request.user
+        # restaurant.save()
+        return super(RestaurantCreateView, self).form_valid(form)
+
 # ------------------ Creating view to handle forms -------------------#

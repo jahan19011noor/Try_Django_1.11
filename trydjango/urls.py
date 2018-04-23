@@ -24,8 +24,8 @@ urlpatterns = [
 #     Chapter 24. Saving Data the Hard + Wrong Way
 
     # url(r'^restaurants/create/$', restaurant_create_view),
-    url(r'^restaurants/create/$', restaurant_create_modal_view),
-    # url(r'^restaurants/create/$', RestaurantCreateView.as_view()),
+    # url(r'^restaurants/create/$', restaurant_create_modal_view),
+    url(r'^restaurants/create/$', RestaurantCreateView.as_view()),
 #     this url being before the slug url gets matched first and thus the url match succeeds
 #     if placed below the slug url the url match will fail
 
