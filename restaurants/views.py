@@ -3,6 +3,8 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import View
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
 from .forms import RestaurantCreateForm, RestaurantCreateModelForm
 
@@ -75,6 +77,7 @@ def restaurant_create_view(request):
 
 #         Chapter 25. The Extra Power of Django Model Forms
 
+@login_required()
 def restaurant_create_modal_view(request):
     form = RestaurantCreateModelForm(request.POST or None)
     errors = None
@@ -94,7 +97,8 @@ def restaurant_create_modal_view(request):
     context = {"form": form, "errors": errors}
     return render(request, template_name, context)
 
-class RestaurantCreateView(CreateView):
+class RestaurantCreateView(LoginRequiredMixin, CreateView):
+    # login_url = '/login/'
     form_class = RestaurantCreateModelForm
     template_name = 'restaurants/form.html'
     success_url = '/restaurants/'
