@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.contrib import admin
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, PasswordResetView
 
 from django.views.generic import TemplateView
 from restaurants.views import (
@@ -37,7 +37,8 @@ urlpatterns = [
 
 
     # chapter 32. LoginView ------------------
-    url(r'^login/$', LoginView.as_view(), name='login_url')
+    url(r'^login/$', LoginView.as_view(), name='login_url'),
+    url(r'^password_reset/$', PasswordResetView.as_view(), name='password_reset')
         #   name provided to allow access of api in the view as : action="{% url 'login' %}"
     # chapter 32. LoginView ------------------
 ]
