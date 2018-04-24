@@ -98,7 +98,7 @@ def restaurant_create_modal_view(request):
     return render(request, template_name, context)
 
 class RestaurantCreateView(LoginRequiredMixin, CreateView):
-    # login_url = '/login/'
+    login_url = '/login/'
     form_class = RestaurantCreateModelForm
     template_name = 'restaurants/form.html'
     success_url = '/restaurants/'
@@ -108,6 +108,7 @@ class RestaurantCreateView(LoginRequiredMixin, CreateView):
         restaurant = form.save(commit=False)
 
         restaurant.owner = self.request.user
+        #         when not logged in the self.request.user gives the class AnonymousUser not the User that we want
         # restaurant.save()
         return super(RestaurantCreateView, self).form_valid(form)
 

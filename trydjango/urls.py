@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth.views import LoginView
 
 from django.views.generic import TemplateView
 from restaurants.views import (
@@ -34,4 +35,9 @@ urlpatterns = [
     # after chapter 22. Slugs as URL Params
     url(r'^restaurant_detail/(?P<slug>[\w-]+)/$', restaurant_detail_view),
 
+
+    # chapter 32. LoginView ------------------
+    url(r'^login/$', LoginView.as_view(), name='login_url')
+        #   name provided to allow access of api in the view as : action="{% url 'login' %}"
+    # chapter 32. LoginView ------------------
 ]
