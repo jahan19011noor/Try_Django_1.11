@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.db.models.signals import pre_save, post_save
 from .utils import unique_slug_generator
 from .validators import validate_caterogy
@@ -23,6 +24,10 @@ class Restaurant(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        # return '/restaurants/{}'.format(self.slug)
+        return reverse('restaurants:detail', kwargs={'slug': self.slug})
 
     @property
     def title(self):

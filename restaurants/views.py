@@ -101,7 +101,7 @@ class RestaurantCreateView(LoginRequiredMixin, CreateView):
     login_url = '/login/'
     form_class = RestaurantCreateModelForm
     template_name = 'restaurants/form.html'
-    success_url = '/restaurants/'
+    # success_url = '/restaurants/'
 #         Chapter 25. The Extra Power of Django Model Forms
 
     def form_valid(self, form):
