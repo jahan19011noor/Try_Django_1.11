@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login_url'),
     url(r'^password_reset/$', PasswordResetView.as_view(), name='password_reset'),
     url(r'^restaurants/', include('restaurants.urls', namespace='restaurants')),
+    url(r'^menu-items/', include('menuItems.urls', namespace='menuItems')),
 ]

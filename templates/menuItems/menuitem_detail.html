@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{object.name}}</title>
+{% endblock title %}
+
+{% block head %}
+    {{ block.super }}
+{% endblock head %}
+
+{% block content %}
+    <h1>{{ object }}</h1>
+{#        <a href="{{ obj.slug }}">{{ obj }}</a>#}
+        <br>Added by: {{ object.user }}<br>
+        Restaurant Name: {{ object.restaurant }}<br>
+        {% if object.contents %}
+            Contents: <br>
+            <ul>
+                {% for content in object.get_contents %}
+                    <li>{{ content }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if object.excludes %}
+            Excludes: <br>
+            <ul>
+                {% for exclude in object.get_excludes %}
+                    <li>{{ exclude }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        Added Date: {{ object.timestamp }}<br>
+        Updated Date: {{ object.updated }}
+{% endblock content %}

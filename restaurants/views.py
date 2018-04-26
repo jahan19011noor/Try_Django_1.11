@@ -42,7 +42,6 @@ class RestaurantListView(ListView):
 class RestaurantDetailView(DetailView):
     queryset = Restaurant.objects.all()
 
-
 # ------------------ Creating view to handle forms -------------------#
 #         Chapter 24. Saving Data the Hard + Wrong Way
 
@@ -100,7 +99,7 @@ def restaurant_create_modal_view(request):
 class RestaurantCreateView(LoginRequiredMixin, CreateView):
     login_url = '/login/'
     form_class = RestaurantCreateModelForm
-    template_name = 'restaurants/form.html'
+    template_name = 'forms.html'
     # success_url = '/restaurants/'
 #         Chapter 25. The Extra Power of Django Model Forms
 
@@ -111,5 +110,10 @@ class RestaurantCreateView(LoginRequiredMixin, CreateView):
         #         when not logged in the self.request.user gives the class AnonymousUser not the User that we want
         # restaurant.save()
         return super(RestaurantCreateView, self).form_valid(form)
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(RestaurantCreateView, self).get_context_data(*args, **kwargs)
+        context['title'] = "Add Restaurant"
+        return context
 
 # ------------------ Creating view to handle forms -------------------#
