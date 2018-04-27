@@ -5,7 +5,7 @@ from .validators import validate_caterogy, validate_email
 class RestaurantCreateForm(forms.Form):
     name = forms.CharField()
     location = forms.CharField(required=False)
-    category = forms.CharField(required=False)
+    category = forms.CharField(required=True)
 
     def clean_name(self):
         name = self.cleaned_data.get("name");

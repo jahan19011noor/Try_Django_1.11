@@ -31,10 +31,19 @@ class MenuItemCreateView(LoginRequiredMixin, CreateView):
         context['title'] = 'Add Menu Item'
         return context
 
-class MenuItemUpdateView(LoginRequiredMixin, CreateView):
+    def get_form_kwargs(self, **kwargs):
+        kwargs = super(MenuItemCreateView, self).get_form_kwargs(**kwargs)
+        kwargs['user'] = self.request.user
+        return kwargs
+
+
+class MenuItemUpdateView(LoginRequiredMixin, UpdateView):
     login_url = '/login/'
     form_class = MenuItemCreateModelForm
     template_name = 'forms.html'
+
+    def get_queryset(self):
+        return MenuItem.objects.filter(user=self.request.user)
 
     def form_valid(self, form):
         menuItem = form.save(commit=False)
@@ -47,3 +56,8 @@ class MenuItemUpdateView(LoginRequiredMixin, CreateView):
         context = super(MenuItemUpdateView, self).get_context_data(*args, **kwargs)
         context['title'] = 'Update Menu Item'
         return context
+
+    def get_form_kwargs(self, **kwargs):
+        kwargs = super(MenuItemUpdateView, self).get_form_kwargs(**kwargs)
+        kwargs['user'] = self.request.user
+        return kwargs

@@ -25,6 +25,7 @@ class MenuItem(models.Model):
     def get_absolute_url(self):
         return reverse('menuItems:detail', kwargs={'slug': self.slug})
 
+    @property
     def title(self):
         return self.name
 

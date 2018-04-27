@@ -16,6 +16,7 @@ def unique_slug_generator(instance, new_slug=None):
         slug = new_slug
     else:
         slug = slugify(instance.title)
+
     if slug in DONT_USE:
 
         new_slug = "{slug}-{randstr}".format(

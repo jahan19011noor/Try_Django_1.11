@@ -33,10 +33,11 @@ class RestaurantListView(ListView):
         if slug:
             queryset = Restaurant.objects.filter(
                 Q(category_iexact=slug) |
-                Q(category_icontains=slug)
+                Q(category_icontains=slug) &
+                Q(owner=self.request.user)
             )
         else:
-            queryset = Restaurant.objects.all()
+            queryset = Restaurant.objects.filter(owner=self.request.user)
         return queryset
 
 class RestaurantDetailView(DetailView):
