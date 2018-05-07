@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{user.username}}</title>
+{% endblock title %}
+
+{% block head %}
+    {{ block.super }}
+{% endblock head %}
+
+{% block content %}
+    <h1>{{user.username}}</h1>
+    <hr/>
+
+    {% if user.restaurant_set.all.exists %}
+            <h3>{{user.username}}'s Restaurants</h3>
+        <ul>
+        {% for rest in user.restaurant_set.all %}
+            <li><h3>{{ rest }}</h3></li>
+            {{ rest.location }} | {{ rest.category }} | {{ rest.timestamp }} | {{ rest.updated }}
+            {% if rest.menuitem_set.all.exists %}
+            <ul>
+            <h3>{{user.username}}'s Menu Items in the {{ rest }}</h3>
+            {% for item in rest.menuitem_set.all %}
+                <li><h3>{{ item }}</h3></li><br>
+                Restaurant Name: {{ item.restaurant }}<br>
+                {% if item.contents %}
+                    Contents: <br>
+                    <ul>
+                        {% for content in item.get_contents %}
+                            <span style="margin-right:4px; background-color: #ccc">{{ content }}</span>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if item.excludes %}
+                    Excludes: <br>
+                    <ul>
+                        {% for exclude in item.get_excludes %}
+                            <span style="margin-right:4px; background-color: #ccc">{{ exclude }}</span>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                Added Date: {{ item.timestamp }}<br>
+                Updated Date: {{ item.updated }}
+            {% endfor %}
+            </ul>
+            {% else %}
+                <p class="lead">No items found</p>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p class="lead">No restaurants found</p>
+    {% endif %}
+{% endblock content %}
