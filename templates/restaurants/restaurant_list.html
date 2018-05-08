@@ -11,11 +11,17 @@
 <h1>My Restaurants <samll><a href="{% url 'restaurants:create' %}">Add</a></samll></h1>
 <ul>
     {% for obj in object_list %}
-    <li><a href="{{ obj.get_absolute_url }}">{{ obj }}</a>
-        <br>{{ obj.name }} - {{ obj.location }} - {{ obj.category }} - {{ obj.timestamp }} - {{ obj.updated }}</li>
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="thumbnail">
+        <h4><a href="{{ obj.get_absolute_url }}">{{ obj }}</a></h4>
+        <br>{{ obj.location }} - {{ obj.category }} - {{ obj.timestamp }} - {{ obj.updated }}
+        </div>
+    </div>
+    </div>
 
-        {% empty %}
-            <li><a href="{% url 'restaurants:create' %}">Add a Restaurant</a></li>
+    {% empty %}
+        <li><a href="{% url 'restaurants:create' %}">Add a Restaurant</a></li>
     {% endfor %}
 </ul>
 {% endblock content %}

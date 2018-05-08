@@ -8,15 +8,18 @@
 {% endblock head %}
 
 {% block content %}
-    <h1>{{ form.instance }}</h1>
-{#        <a href="{{ obj.slug }}">{{ obj }}</a>#}
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="thumbnail">
+
+        <h4>Item Name: {{ form.instance }}</h4>
         <br>Added by: {{ form.instance.user }}<br>
         Restaurant Name: {{ form.instance.restaurant }}<br>
         {% if form.instance.contents %}
             Contents: <br>
             <ul>
                 {% for content in form.instance.get_contents %}
-                    <li>{{ content }}</li>
+                    <span class="badge badge-default">{{ content }}</span>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -25,12 +28,15 @@
             Excludes: <br>
             <ul>
                 {% for exclude in form.instance.get_excludes %}
-                    <li>{{ exclude }}</li>
+                    <span class="badge badge-default">{{ exclude }}</span>
                 {% endfor %}
             </ul>
         {% endif %}
         Added Date: {{ form.instance.timestamp }}<br>
         Updated Date: {{ form.instance.updated }}
+        </div>
+    </div>
+    </div>
 
 <hr/>
 

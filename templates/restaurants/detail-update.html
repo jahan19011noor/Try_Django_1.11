@@ -8,10 +8,14 @@
 {% endblock head %}
 
 {% block content %}
-<h1>{{form.instance.title}}</h1>
-<ul>
-    <li>{{ form.instance.location }} - {{ form.instance.category }} - {{ form.instance.timestamp }} - {{ form.instance.updated }}</li>
-</ul>
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="thumbnail">
+        <h4><h1>{{form.instance.title}}</h1></h4>
+        <br>{{ form.instance.location }} - {{ form.instance.category }} - {{ form.instance.timestamp }} - {{ form.instance.updated }}
+        </div>
+    </div>
+    </div>
 
 <hr/>
 
