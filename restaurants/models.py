@@ -38,7 +38,7 @@ class Restaurant(models.Model):
             # and     model.owner gives user
     name            = models.CharField(max_length=100)
     location        = models.CharField(max_length=255, null=True, blank=True)
-    category        = models.CharField(max_length=255, validators=[validate_caterogy])
+    category        = models.CharField(max_length=255, null=True, blank=True, validators=[validate_caterogy])
     timestamp       = models.DateTimeField(auto_now_add=True)   # Saves automatically and does not allow to make changes
     updated         = models.DateTimeField(auto_now=True)       # Saves automatically and does not allow to make changes
     slug            = models.SlugField(null=True, blank=True)
