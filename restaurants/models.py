@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.db.models import Q
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db.models.signals import pre_save, post_save
@@ -9,6 +10,27 @@ from .validators import validate_caterogy
 User = settings.AUTH_USER_MODEL
 
 # Create your models here.
+class RestaurantQuerySet(models.query.QuerySet):
+    def search(self, query):#Restaurant.objects.all().search(query) or Restaurant.objects.filter(something).search()
+        if query:
+            query = query.strip()
+            return self.filter(
+                Q(name__icontains=query) |
+                Q(location__icontains=query) |
+                Q(category__icontains=query) |
+                Q(menuitem__name__icontains=query)|
+                Q(menuitem__contents__icontains=query)
+            ).distinct()
+        else:
+            return self
+
+class RestaurantManager(models.Manager):
+    def get_queryset(self):
+        return RestaurantQuerySet(self.model, using=self._db)
+
+    def search(self, query):#Restaurant.objects.search()
+        return self.get_queryset().search(query)
+
 class Restaurant(models.Model):
     owner            = models.ForeignKey(User)
             #class_instance.model_name_set.all() = restaurants
@@ -21,6 +43,8 @@ class Restaurant(models.Model):
     updated         = models.DateTimeField(auto_now=True)       # Saves automatically and does not allow to make changes
     slug            = models.SlugField(null=True, blank=True)
     # my_date_field   = models.DateTime(auto_now=False, auto_now_add=False)
+
+    objects = RestaurantManager()
 
     def __str__(self):
         return self.name

@@ -10,31 +10,27 @@
 {% block content %}
     <h1>{{user.username}}</h1>
     <hr/>
-    <form class="form" method="GET" action=".">
-        <input type="text" placeholder="Search.." name="q" value="{{ request.GET.q }}">
-        <button class="btn btn-default" type="submit">Search</button>
-    </form>
 
-    {% if restaurants %}
+    {% if user.restaurant_set.all.exists %}
             <h3>{{user.username}}'s Restaurants</h3>
         <ul>
-        {% for rest in restaurants %}
+        {% for rest in user.restaurant_set.all %}
             <div class="row">
                 <div class="col-sm-12">
                     <div class="thumbnail">
                     <h3>{{ rest }}</h3>
-                    <p><a href="{{ request.path }}?q={{ rest.location }}">{{ rest.location }}</a> | <a href="{{ request.path }}?q={{ rest.category }}">{{ rest.category }}</a></p>
+                    <p>{{ rest.location }} | {{ rest.category }}</p>
                     {% if rest.menuitem_set.all.exists %}
                     <h3>Menu Items:</h3>
                     <ul>
                         {% for item in rest.menuitem_set.all %}
-                            <li><h3><a href="{{ request.path }}?q={{ item }}">{{ item }}</a></h3><br>
+                            <li><h3>{{ item }}</h3><br>
                                 {% if item.contents %}
                                     <ul>
                                     Contents: <br>
 
                                         {% for content in item.get_contents %}
-                                            <a href="{{ request.path }}?q={{ content }}"><span class="badge badge-default">{{ content }}</span></a>
+                                            <span class="badge badge-default">{{ content }}</span>
                                         {% endfor %}
                                     </ul>
                                 {% endif %}

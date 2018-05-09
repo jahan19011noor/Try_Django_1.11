@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28f6a135-7ca5-46df-b2fd-04b59fedb34a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/templates/profiles/user_detail_up_to_chap_39.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/templates/profiles/user_detail.html" afterPath="$PROJECT_DIR$/profiles/templates/profiles/user_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/menuItems/detail-update.html" afterPath="$PROJECT_DIR$/templates/menuItems/detail-update.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/menuItems/menuitem_list.html" afterPath="$PROJECT_DIR$/templates/menuItems/menuitem_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/restaurants/detail-update.html" afterPath="$PROJECT_DIR$/templates/restaurants/detail-update.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/restaurants/restaurant_list.html" afterPath="$PROJECT_DIR$/templates/restaurants/restaurant_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/snippets/nav.html" afterPath="$PROJECT_DIR$/templates/snippets/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles/views.py" afterPath="$PROJECT_DIR$/profiles/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restaurants/models.py" afterPath="$PROJECT_DIR$/restaurants/models.py" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,21 +27,77 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="detail-update.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/restaurants/detail-update.html">
+        <entry file="file://$PROJECT_DIR$/templates/menuItems/detail-update.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail-update.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/menuItems/detail-update.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/profiles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58882684">
-              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+            <state vertical-scroll-proportion="-13.851851">
+              <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/menuItems/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.7777777">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/profiles/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5185184">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restaurants/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.37037">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+              <folding>
+                <element signature="e#24#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/menuItems/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.4074073">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restaurants/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.703703">
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,60 +105,28 @@
       <file leaf-file-name="restaurant_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/restaurants/restaurant_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="20" column="10" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="10" />
+            <state vertical-scroll-proportion="-17.0">
+              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuitem_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/menuItems/menuitem_list.html">
+      <file leaf-file-name="css.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/snippets/css.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153">
-              <caret line="25" column="74" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="74" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="79" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/snippets/nav.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trydjango/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5555553">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profiles/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7777777">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/profiles/templates/profiles/user_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.461538">
-              <caret line="31" column="78" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.49330357">
+              <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -133,7 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/project/trydjango1_11/settings.py" />
         <option value="$PROJECT_DIR$/restaurants/views_up_to_chap_11.py" />
         <option value="$PROJECT_DIR$/restaurants/admin.py" />
         <option value="$PROJECT_DIR$/restaurants/views_up_to_chap_15.py" />
@@ -164,26 +185,27 @@
         <option value="$PROJECT_DIR$/trydjango/utils.py" />
         <option value="$PROJECT_DIR$/menuItems/models.py" />
         <option value="$PROJECT_DIR$/restaurants/forms.py" />
-        <option value="$PROJECT_DIR$/restaurants/models.py" />
         <option value="$PROJECT_DIR$/menuItems/forms.py" />
         <option value="$PROJECT_DIR$/templates/restaurants/restaurant_detail.html" />
         <option value="$PROJECT_DIR$/restaurants/urls.py" />
-        <option value="$PROJECT_DIR$/restaurants/views.py" />
         <option value="$PROJECT_DIR$/templates/snippets/form-snippet.html" />
         <option value="$PROJECT_DIR$/templates/forms.html" />
         <option value="$PROJECT_DIR$/menuItems/views.py" />
         <option value="$PROJECT_DIR$/menuItems/urls.py" />
         <option value="$PROJECT_DIR$/trydjango/urls.py" />
         <option value="$PROJECT_DIR$/profiles/urls.py" />
-        <option value="$PROJECT_DIR$/profiles/views.py" />
         <option value="$PROJECT_DIR$/templates/profiles/user_detail.html" />
         <option value="$PROJECT_DIR$/trydjango/settings/base.py" />
-        <option value="$PROJECT_DIR$/profiles/templates/profiles/user_detail.html" />
         <option value="$PROJECT_DIR$/templates/menuItems/menuitem_list.html" />
         <option value="$PROJECT_DIR$/templates/snippets/nav.html" />
         <option value="$PROJECT_DIR$/templates/restaurants/restaurant_list.html" />
         <option value="$PROJECT_DIR$/templates/restaurants/detail-update.html" />
         <option value="$PROJECT_DIR$/templates/menuItems/detail-update.html" />
+        <option value="$PROJECT_DIR$/profiles/templates/profiles/user_detail_up_to_chap_39.html" />
+        <option value="$PROJECT_DIR$/restaurants/views.py" />
+        <option value="$PROJECT_DIR$/profiles/views.py" />
+        <option value="$PROJECT_DIR$/restaurants/models.py" />
+        <option value="$PROJECT_DIR$/profiles/templates/profiles/user_detail.html" />
       </list>
     </option>
   </component>
@@ -352,6 +374,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="restaurants" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Try_Django_1.11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Try_Django_1.11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="profiles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -378,10 +414,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Try_Django_1.11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Try_Django_1.11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menuItems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -626,10 +676,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29637527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22974414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34266666" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -642,7 +693,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34266666" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -664,25 +714,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/snippets/sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/snippets/js.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -844,13 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restaurants/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.592592">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/restaurants/form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.307692">
@@ -893,13 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/restaurants/restaurant_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trydjango/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6453362">
@@ -911,35 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.074074">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restaurants/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.481482">
-          <caret line="60" column="65" selection-start-line="60" selection-start-column="65" selection-end-line="60" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/menuItems/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14750542">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#54#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,7 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -955,15 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6261161">
           <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/menuItems/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11062907">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,29 +954,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11062907">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/snippets/css.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profiles/templates/profiles/user_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.461538">
-          <caret line="31" column="78" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trydjango/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5555553">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
@@ -1001,17 +967,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/profiles/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7777777">
+        <state vertical-scroll-proportion="0.0">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/snippets/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
@@ -1019,7 +985,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/restaurants/detail-update.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
@@ -1027,24 +993,110 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/menuItems/menuitem_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
+        <state vertical-scroll-proportion="0.0">
           <caret line="25" column="74" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/templates/profiles/user_detail_up_to_chap_39.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.615385">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/restaurants/restaurant_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/restaurants/restaurant_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="10" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="10" />
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/snippets/css.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="79" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5185184">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/menuItems/detail-update.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58882684">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurants/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.703703">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menuItems/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4074073">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.851851">
+          <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menuItems/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7777777">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurants/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.37037">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding>
+            <element signature="e#24#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/templates/profiles/user_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49330357">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
           <folding />
         </state>
       </provider>
