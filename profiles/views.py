@@ -21,8 +21,14 @@ class ProfileDetailVeiw(DetailView):
         user = context['user']
         query = self.request.GET.get('q')
         restaurant_qs = Restaurant.objects.filter(owner=user).search(query)
+        following_list = user.profile.following.all()
+        suggested = []
+        for fellow in following_list:
+            suggested.append(fellow.profile.following.all())
 
         menuItem_qs = MenuItem.objects.filter(user=user).exists()
         if restaurant_qs.exists() and menuItem_qs:
             context['restaurants'] = restaurant_qs
+            context['following'] = following_list
+            context['suggested'] = suggested
         return context

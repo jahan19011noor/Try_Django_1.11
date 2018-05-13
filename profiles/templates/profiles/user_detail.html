@@ -15,6 +15,15 @@
         <button class="btn btn-default" type="submit">Search</button>
     </form>
 
+    {% if following %}
+        <h3>{{user.username}} is following</h3>
+        <ul>
+            {% for fellow in following %}
+                <a href="{% url 'profiles:detail' username=fellow.username%}"><span class="badge badge-default">{{ fellow }}</span></a>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
     {% if restaurants %}
             <h3>{{user.username}}'s Restaurants</h3>
         <ul>

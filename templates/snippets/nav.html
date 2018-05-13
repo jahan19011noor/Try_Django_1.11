@@ -5,6 +5,6 @@
     {% if request.user.is_authenticated %}
         <a href="{% url 'restaurants:list' %}">Restaurants</a>
         <a href="{% url 'menuItems:list' %}">Menu Items</a>
+        <a href="{% url 'profiles:detail' username=request.user.username%}">Profiles</a>
     {% endif %}
-{#    <a href="{% url 'profiles:detail' %}">Profiles</a>#}
 </div>
