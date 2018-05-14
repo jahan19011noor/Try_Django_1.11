@@ -54,6 +54,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'trydjango.urls'
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/restaurants/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 TEMPLATES = [
     {
