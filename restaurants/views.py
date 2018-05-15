@@ -11,7 +11,6 @@ from .forms import RestaurantCreateForm, RestaurantCreateModelForm
 from .models import Restaurant
 
 class RestaurantListView(LoginRequiredMixin, ListView):
-    login_url = '/login/'
     def get_queryset(self):
         return Restaurant.objects.filter(owner=self.request.user)
 
@@ -20,7 +19,6 @@ class RestaurantDetailView(LoginRequiredMixin, DetailView):
         return Restaurant.objects.filter(owner=self.request.user)
 
 class RestaurantCreateView(LoginRequiredMixin, CreateView):
-    login_url = '/login/'
     form_class = RestaurantCreateModelForm
     template_name = 'forms.html'
     # success_url = '/restaurants/'
@@ -40,7 +38,6 @@ class RestaurantCreateView(LoginRequiredMixin, CreateView):
         return context
 
 class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
-    login_url = '/login/'
     form_class = RestaurantCreateModelForm
     template_name = 'forms.html'
 
@@ -53,7 +50,6 @@ class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
         return context
 
 class RestaurantDetailUpdateView(LoginRequiredMixin, UpdateView):
-    login_url = '/login/'
     form_class = RestaurantCreateModelForm
     template_name = 'restaurants/detail-update.html'
 

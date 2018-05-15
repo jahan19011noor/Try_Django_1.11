@@ -16,16 +16,55 @@
     </form>
 
     {% if following %}
-        <h3>{{user.username}} is following</h3>
+        {% if user == request.user %}
+            <h3>You are following</h3>
+        {% else %}
+            <h3>{{ user.username }} is following</h3>
+        {% endif %}
         <ul>
+            <div class="row">
             {% for fellow in following %}
-                <a href="{% url 'profiles:detail' username=fellow.username%}"><span class="badge badge-default">{{ fellow }}</span></a>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a href="{% url 'profiles:detail' username=fellow.username %}">{{ fellow }}</a>
+                        {% if user == request.user %}
+                        <a href="{% url 'profiles:unfollow' username=fellow.username %}" class="pull-right">
+                            <span class="badge badge-default">Unfollow</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
             {% endfor %}
+            </div>
+        </ul>
+    {% endif %}
+
+    {% if suggested %}
+        {% if user == request.user %}
+            <h3>You may follow</h3>
+        {% else %}
+            <h3>{{ user.username }} may follow</h3>
+        {% endif %}
+        <ul>
+            <div class="row">
+            {% for fellow in suggested %}
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a href="{% url 'profiles:detail' username=fellow.username %}">{{ fellow }}</a>
+                        {% if user == request.user %}
+                        <a href="{% url 'profiles:follow' username=fellow.username %}" class="pull-right">
+                            <span class="badge badge-default">Follow</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
         </ul>
     {% endif %}
 
     {% if restaurants %}
-            <h3>{{user.username}}'s Restaurants</h3>
+            <h3>Your Restaurant List</h3>
         <ul>
         {% for rest in restaurants %}
             <div class="row">
