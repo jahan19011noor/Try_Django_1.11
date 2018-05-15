@@ -15,6 +15,19 @@ class ProfileManager(models.Manager):
                     suggested_list.append(item)
         return following_list, suggested_list
 
+    def toggle_follow(self, request_user, username_to_toggle):
+        following_list = request_user.profile.following.all()
+
+        user_to_toggle = Profile.objects.get(user__username__exact=username_to_toggle).user
+        is_following = False
+        if user_to_toggle in following_list:
+            request_user.profile.following.remove(user_to_toggle)
+        else:
+            request_user.profile.following.add(user_to_toggle)
+            is_following = True
+
+        return is_following
+
 class Profile(models.Model):
     user        = models.OneToOneField(User) #user.profile accesses profile and reverse
     following   = models.ManyToManyField(User, related_name='followers', blank=True)

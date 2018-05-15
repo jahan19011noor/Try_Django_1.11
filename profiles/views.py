@@ -29,6 +29,18 @@ class ProfileDetailVeiw(LoginRequiredMixin, DetailView):
         context['following'] = following_list
         context['suggested'] = suggested_list
 
+        request_user = self.request.user
+        request_user_following_list = []
+
+        if user != self.request.user:
+            request_user_following_list = request_user.profile.following.all()
+
+        is_following = False
+        if user in request_user_following_list:
+            is_following = True
+
+        context['is_following'] = is_following
+
         menuItem_qs = MenuItem.objects.filter(user=user).exists()
 
         if restaurant_qs.exists() and menuItem_qs:
@@ -57,3 +69,12 @@ class FollowProfileView(LoginRequiredMixin, View):
         user.profile.following.add(user_to_follow)
 
         return redirect("/profiles/{}/".format(user))
+
+class ToggleFollowProfileView(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        username = self.kwargs.get('username')
+
+        toggle_follow = Profile.objects.toggle_follow(user, username)
+
+        return redirect("/profiles/{}/".format(username))

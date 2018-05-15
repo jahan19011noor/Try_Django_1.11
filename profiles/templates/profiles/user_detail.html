@@ -8,6 +8,9 @@
 {% endblock head %}
 
 {% block content %}
+    {% if user != request.user %}
+        {% include 'profiles/snippets/follow_form.html' with username=user.username is_following=is_following %}
+    {% endif %}
     <h1>{{user.username}}</h1>
     <hr/>
     <form class="form" method="GET" action=".">

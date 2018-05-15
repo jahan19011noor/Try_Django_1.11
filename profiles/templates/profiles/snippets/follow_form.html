@@ -1,0 +1,10 @@
+<form class="form" method="POST" action="{% url 'profiles:toggle-follow' username=user.username %}">{% csrf_token %}
+    <input type="hidden" name="username" value="{{ user.username }}">
+    <button class="btn {% if is_following %}btn-danger{% else %}btn-primary{% endif %}" type="submit">
+        {% if is_following %}
+            Unfollow
+        {% else %}
+            Follow
+        {% endif %}
+    </button>
+</form>
