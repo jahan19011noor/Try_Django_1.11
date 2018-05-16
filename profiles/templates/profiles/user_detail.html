@@ -66,6 +66,30 @@
         </ul>
     {% endif %}
 
+    {% if followers %}
+        {% if user == request.user %}
+            <h3>Your Followers</h3>
+        {% else %}
+            <h3>{{ user.username }}'s Followers</h3>
+        {% endif %}
+        <ul>
+            <div class="row">
+            {% for fellow in followers %}
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a href="{% url 'profiles:detail' username=fellow.username %}">{{ fellow }}</a>
+{#                        {% if user == request.user %}#}
+{#                        <a href="{% url 'profiles:follow' username=fellow.username %}" class="pull-right">#}
+{#                            <span class="badge badge-default">Follow</span>#}
+{#                        </a>#}
+{#                        {% endif %}#}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </ul>
+    {% endif %}
+
     {% if restaurants %}
             <h3>Your Restaurant List</h3>
         <ul>

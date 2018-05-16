@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.db.models.signals import post_save
+from django.contrib.auth import get_user_model
 
 User = settings.AUTH_USER_MODEL
 
@@ -14,6 +15,12 @@ class ProfileManager(models.Manager):
                 if item not in suggested_list and item not in following_list and item != request_user:
                     suggested_list.append(item)
         return following_list, suggested_list
+
+    def followers_list(self, request_user):
+        user_model = get_user_model()
+
+        followers_list = user_model.objects.filter(profile__following=request_user)
+        return followers_list
 
     def toggle_follow(self, request_user, username_to_toggle):
         following_list = request_user.profile.following.all()
