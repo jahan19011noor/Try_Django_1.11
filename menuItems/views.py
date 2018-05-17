@@ -12,7 +12,7 @@ class HomeView(LoginRequiredMixin, View):
 
         user = request.user
         following_user_ids = [x.id for x in user.profile.following.all()]
-        qs = MenuItem.objects.filter(user__id__in=following_user_ids, public=True).order_by("-updated")[:3]
+        qs = MenuItem.objects.filter(user__id__in=following_user_ids, public=True).order_by("-updated")
         return render(request, "menuItems/home-feed.html", {'qs': qs})
 
 class MenuItemListView(LoginRequiredMixin, ListView):

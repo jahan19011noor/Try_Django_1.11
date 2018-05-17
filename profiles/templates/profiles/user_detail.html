@@ -91,7 +91,11 @@
     {% endif %}
 
     {% if restaurants %}
+        {% if user == request.user %}
             <h3>Your Restaurant List</h3>
+        {% else %}
+            <h3>{{ user.username }}'s Restaurant List</h3>
+        {% endif %}
         <ul>
         {% for rest in restaurants %}
             <div class="row">

@@ -15,10 +15,11 @@ class RestaurantQuerySet(models.query.QuerySet):
         if query:
             query = query.strip()
             return self.filter(
+                Q(owner__username=query) |
                 Q(name__icontains=query) |
                 Q(location__icontains=query) |
                 Q(category__icontains=query) |
-                Q(menuitem__name__icontains=query)|
+                Q(menuitem__name__icontains=query) |
                 Q(menuitem__contents__icontains=query)
             ).distinct()
         else:

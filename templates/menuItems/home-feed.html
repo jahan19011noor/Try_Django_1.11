@@ -15,15 +15,15 @@
     <div class="col-sm-12">
         <div class="thumbnail">
 
-        <h4>Item Name: <a href="{{ obj.get_absolute_url }}">{{ obj }}</a></h4>
-        <br>Added by: {{ obj.user }}<br>
-        Restaurant Name: {{ obj.restaurant }}<br>
+        <h4>Item Name: <a href="{% url 'profiles:detail' username=obj.user %}?q={{ obj }}">{{ obj }}</a></h4>
+        <br>Added by: <a href="{% url 'profiles:detail' username=obj.user %}?q={{ obj.user }}">{{ obj.user }}</a><br>
+        Restaurant Name: <a href="{% url 'profiles:detail' username=obj.user %}?q={{ obj.restaurant }}">{{ obj.restaurant }}</a><br>
         {% if obj.contents %}
             <ul>
             Contents: <br>
 
                 {% for content in obj.get_contents %}
-                    <span class="badge badge-default">{{ content }}</span>
+                    <a href="{% url 'profiles:detail' username=obj.user %}?q={{ content }}"><span class="badge badge-default">{{ content }}</span></a>
                 {% endfor %}
             </ul>
         {% endif %}
