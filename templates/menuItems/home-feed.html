@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Menu Items List</title>
+{% endblock title %}
+
+{% block head %}
+    {{ block.super }}
+{% endblock head %}
+
+{% block content %}
+<h1>Menu Item List of your Followers</h1>
+<ul>
+    {% for obj in qs %}
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="thumbnail">
+
+        <h4>Item Name: <a href="{{ obj.get_absolute_url }}">{{ obj }}</a></h4>
+        <br>Added by: {{ obj.user }}<br>
+        Restaurant Name: {{ obj.restaurant }}<br>
+        {% if obj.contents %}
+            <ul>
+            Contents: <br>
+
+                {% for content in obj.get_contents %}
+                    <span class="badge badge-default">{{ content }}</span>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if obj.excludes %}
+            <ul>
+            Excludes: <br>
+                {% for exclude in obj.get_excludes %}
+                    <span class="badge badge-default">{{ exclude }}</span>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        Added Date: {{ obj.timestamp }}<br>
+        Updated Date: {{ obj.updated }}
+        </div>
+    </div>
+    </div>
+
+    {% empty %}
+        <li><a href="{% url 'menuItems:create' %}">Add a Menu Item</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}

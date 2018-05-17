@@ -1,9 +1,19 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import View, ListView, DetailView, CreateView, UpdateView
 
 from .models import MenuItem
 from .forms import MenuItemCreateModelForm
+
+class HomeView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_authenticated():
+            return render(request, "home.html", {})
+
+        user = request.user
+        following_user_ids = [x.id for x in user.profile.following.all()]
+        qs = MenuItem.objects.filter(user__id__in=following_user_ids, public=True).order_by("-updated")[:3]
+        return render(request, "menuItems/home-feed.html", {'qs': qs})
 
 class MenuItemListView(LoginRequiredMixin, ListView):
     def get_queryset(self):

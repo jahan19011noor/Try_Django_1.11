@@ -37,7 +37,7 @@
                 {% if request.user.is_authenticated %}
                     <li><a href="{% url 'logout_url' %}?next=/login/">Logout</a></li>
                 {% else %}
-                    <li><a href="{% url 'login_url' %}?next=/restaurants/">Login</a></li>
+                    <li><a href="{% url 'login_url' %}">Login</a></li>
                 {% endif %}
             </ul>
         </div>
