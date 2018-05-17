@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView, PasswordResetView, LogoutView
 
 from django.views.generic import TemplateView
 from menuItems.views import HomeView
-from profiles.views import RegisterView
+from profiles.views import RegisterView, activate_user_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html'), name='contact'),
     url(r'^register/$', RegisterView.as_view(), name='register'),
+    url(r'^activate/(?P<code>[a-z0-9].*)/$', activate_user_view, name='activate-user'),
     url(r'^login/$', LoginView.as_view(), name='login_url'),
     url(r'^logout/$', LogoutView.as_view(), {'next_page': '/registration/login.html/'}, name='logout_url'),
     url(r'^password_reset/$', PasswordResetView.as_view(), name='password_reset'),
