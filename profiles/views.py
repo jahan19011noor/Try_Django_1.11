@@ -52,11 +52,9 @@ class ProfileDetailVeiw(LoginRequiredMixin, DetailView):
 
         restaurant_qs = Restaurant.objects.filter(owner=user).search(query)
 
-        following_list, suggested_list = Profile.objects.following_and_suggested(user)
-        followers_list = Profile.objects.followers_list(user)
-        context['following'] = following_list
-        context['suggested'] = suggested_list
-        context['followers'] = followers_list
+        context['following'] = Profile.objects.following_list(user)
+        context['suggested'] = Profile.objects.suggested_list(user)
+        context['followers'] = Profile.objects.followers_list(user)
 
         request_user = self.request.user
         request_user_following_list = []

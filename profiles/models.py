@@ -9,21 +9,32 @@ from .utils import code_generator
 User = settings.AUTH_USER_MODEL
 
 class ProfileManager(models.Manager):
-    def following_and_suggested(self, request_user):
-        following_list = request_user.profile.following.all()
-        suggested_list = []
-        for fellow in following_list:
-            fellow_following_list = fellow.profile.following.all()
-            for item in fellow_following_list:
-                if item not in suggested_list and item not in following_list and item != request_user:
-                    suggested_list.append(item)
-        return following_list, suggested_list
+
+    def following_list(self, request_user):
+        return request_user.profile.following.all()
 
     def followers_list(self, request_user):
         user_model = get_user_model()
 
         followers_list = user_model.objects.filter(profile__following=request_user)
         return followers_list
+
+    def suggested_list(self, request_user):
+
+        following_list = self.following_list(request_user)
+        suggested_list = []
+        for fellow in following_list:
+            fellow_s_following_list = fellow.profile.following.all()
+            for item in fellow_s_following_list:
+                if item not in suggested_list and item not in following_list and item != request_user:
+                    suggested_list.append(item)
+
+        followers_list = self.followers_list(request_user)
+
+        for fellow in followers_list:
+            if fellow not in following_list and fellow not in suggested_list and fellow != request_user:
+                suggested_list.append(fellow)
+        return suggested_list
 
     def toggle_follow(self, request_user, username_to_toggle):
         following_list = request_user.profile.following.all()
