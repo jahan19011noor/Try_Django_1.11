@@ -18,23 +18,15 @@
 {#   so the name argument has to be provided in the url for the api   #}
 <form method="post" action="{% url 'login_url' %}">
 {% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
+
+    {{ form.as_p }}
 
 <input type="submit" value="login" />
-    {{ next }}
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'register' %}">Create New Account</a></p>
 
 {% endblock %}
