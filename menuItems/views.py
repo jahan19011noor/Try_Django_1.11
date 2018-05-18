@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import View, ListView, DetailView, CreateView, UpdateView
 
 from .models import MenuItem
@@ -24,9 +25,10 @@ class MenuItemDetailView(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         return MenuItem.objects.filter(user=self.request.user)
 
-class MenuItemCreateView(LoginRequiredMixin, CreateView):
+class MenuItemCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = MenuItemCreateModelForm
     template_name = 'forms.html'
+    success_message = "Menu item created successfully!"
 
     def form_valid(self, form):
         menuItem = form.save(commit=False)
@@ -63,9 +65,10 @@ class MenuItemUpdateView(LoginRequiredMixin, UpdateView):
         kwargs['user'] = self.request.user
         return kwargs
 
-class MenuItemDetailUpdateView(LoginRequiredMixin, UpdateView):
+class MenuItemDetailUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = MenuItemCreateModelForm
     template_name = 'menuItems/detail-update.html'
+    success_message = "Menu item updated successfully!"
 
     def get_queryset(self):
         return MenuItem.objects.filter(user=self.request.user)

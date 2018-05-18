@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 from .forms import RestaurantCreateForm, RestaurantCreateModelForm
 
@@ -18,11 +19,12 @@ class RestaurantDetailView(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         return Restaurant.objects.filter(owner=self.request.user)
 
-class RestaurantCreateView(LoginRequiredMixin, CreateView):
+class RestaurantCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = RestaurantCreateModelForm
     template_name = 'forms.html'
     # success_url = '/restaurants/'
 #         Chapter 25. The Extra Power of Django Model Forms
+    success_message = "Restaurant created successfully!"
 
     def form_valid(self, form):
         restaurant = form.save(commit=False)
@@ -49,9 +51,10 @@ class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
         context['title'] = 'Update Restaurant: {}'.format(self.get_object().name)
         return context
 
-class RestaurantDetailUpdateView(LoginRequiredMixin, UpdateView):
+class RestaurantDetailUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = RestaurantCreateModelForm
     template_name = 'restaurants/detail-update.html'
+    success_message = "Restaurant updated successfully!"
 
     def get_queryset(self):
         return Restaurant.objects.filter(owner=self.request.user)

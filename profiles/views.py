@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import View, DetailView, CreateView
 from restaurants.models import Restaurant
 from menuItems.models import MenuItem
@@ -26,10 +27,11 @@ def activate_user_view(request, code=None, *args, **kwargs):
                 return redirect("/login/")
     return redirect("/login/")
 
-class RegisterView(CreateView):
+class RegisterView(SuccessMessageMixin, CreateView):
     form_class = RegisterForm
     template_name = 'registration/register.html'
     success_url = '/'
+    success_message = "Your account was created successfully!"
 
     def dispatch(self, *args, **kwargs):
         if self.request.user.is_authenticated():
